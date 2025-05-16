@@ -1,0 +1,789 @@
+/*
+    Online Canteen System 
+*/
+
+/* Global*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: DK Crayon Crumble;
+}  
+
+:root{
+    --cart_size: "6";
+    --nav_bg: #FFFFF0;
+}
+
+
+.background{
+    background: rgba(0, 0, 0, 0.7) url('../Photo/blackboard.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+
+}
+
+
+.main_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 64px;
+    color: whitesmoke;
+}
+
+.small_heading{
+    font-weight: bold;
+    font-size: 50px;
+}
+/* Text alignment begins here */
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+/* Text alignment Ends here */
+
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+/* Image Respolution */
+.image_res{
+    width: 100%;
+    height: 100%;
+}
+
+.credit{
+    color: bisque;
+}
+
+th, td {
+    padding: 15px;
+  }
+
+.food{
+    /* display: flex; */
+    color: white;
+}
+
+.food_area{
+    display: flex;
+}
+
+.food_img{
+    width: 30%;
+    /* flex-direction: column; */
+    /* justify-content: right;  */
+}
+
+.food_img img{
+    width: 50%;
+    /* width: 300px;    */
+    /* height: auto; */
+    /* border: 3px solid black; */
+    /* border-radius: 150px; */
+    /* text-align: center; */
+    /* padding: 5px; */
+    /* position: relative;  */
+    /* left: 115%; */
+    /* display: flex; */
+    /* display: block; */
+    /* margin: auto; */
+}
+
+.fs{
+    display: flex;
+}
+
+.food_section{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 50%; */
+}
+
+.food_wrapper{
+    display: flex;
+}
+
+.food_section ul{
+    list-style-type: none;
+}
+.food_section ul li{
+    padding: 9px 0px;
+}
+
+.food_list{
+    padding: 1%;
+    width: 21%;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.non_veg{
+    color: #EE4B2B;
+    padding-left: 3%;
+}
+
+.veg{
+    color: #32CD32;
+    padding-left: 3%;
+}
+
+.drink{
+    /* display: flex;
+    flex-direction: row-reverse; */
+    color: white;
+    flex-wrap: wrap;
+}
+
+.drink_area{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.drink_img{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.drink_img img{
+    width: 32%;
+}
+
+.ds{
+    display: flex;
+    height: 45px;
+}
+.drink_section{
+    width: 39%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.drink_section ul{
+    list-style-type: none;
+}
+
+.drink_section ul li{
+    padding: 9px 0px;
+}
+
+.drink_list{
+        padding: 1%;
+        /* width: 45px; */
+        width: 47%;
+        font-size: 21px;
+        font-weight: bold;
+}
+
+.milk{
+    color:#FFDEAD;
+    padding-left: 3%;
+}
+.black{
+    color: #E2DFD2;
+    padding-left: 3%;
+}
+
+.price_list{
+    color: #DFFF00;
+    width: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 0 5px 5px;
+}
+
+/* CSS for food and drink list starts here */
+.minus{
+    height: 25px;
+    width: 25px;
+    border: 1px black solid;
+    border-radius:50%;
+    margin-left:10px;
+    margin-right:10px;
+    cursor: pointer;
+}
+
+.plus{
+    height:25px;
+    width:25px;
+    border:1px black solid;
+    border-radius:50%;
+    margin-left:10px;
+    margin-right:10px;
+    cursor: pointer;
+}
+
+.minus:hover{
+    background-color:red;    
+    border:none;
+}
+.plus:hover{
+    background-color:green;
+    border:none;
+}
+
+.numberPlace {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E4D00A;
+    background-color: transparent;
+    width: 20px;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+/* CSS for food and drink list Ends here */
+
+/* CSS For Navigation Bar Satrts Here*/
+.nav_bar{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    border: 0.1px solid #818589;
+    background-color:black;
+    align-items: center;
+    /* overflow: hidden; */
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.logo{
+
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-right: 1px solid #bbb; */
+}
+.logo img{
+    width: 40px;
+    /* border: 1px solid white; */
+    border-radius: 50px;
+}
+
+.logo_title{
+    color: beige;
+    font-weight: bolder;
+    padding: 0  5px;
+}
+
+
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 26px 30px;
+    /* border-right: 2px solid #bbb; */
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.menu ul li a:hover{
+    color:#DFFF00;
+}
+
+.right_nav{
+    text-decoration: none;
+    width: 50%;
+    text-align: right;
+}
+
+.login{
+    text-align: right;
+}
+
+.menu{
+    width: 70%;
+}
+
+.fa-right-to-bracket,.fa-user,.fa-user-check,.username{
+    color: white;
+
+}
+
+.fa-right-to-bracket:hover{
+    color:red;
+    cursor: pointer;
+}
+.fa-user:hover{
+    color:#DFFF00;
+    cursor: pointer;
+}
+.fa-user-check:hover{
+    color:green;
+    cursor: pointer;
+}
+
+.username{
+    color: #DFFF00;
+    margin-left: 2px;
+}
+
+.greenText{
+    color: green;
+}
+
+.whiteText{
+    color: white;
+}
+
+
+/* CSS For Navigation Bar Ends Here*/
+
+/* CSS For Credit Starts Here */
+.fa-circle-dollar-to-slot{
+    color: #E49B0F;
+}
+#credit{
+    color: #E49B0F;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.creditP{
+    font-size: 22px;
+    margin-top: 5px;
+}
+/* CSS For Credit Ends Here */
+
+/* CSS For Login Panel Starts Here */
+
+.login_Panel{
+    color: white; 
+    font-size: 26px;
+    position: fixed;
+    left: 875px;
+    text-align: center;
+    border: 1px solid white;
+    width: 30%;
+    padding: 10px 20px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.login_header{
+    font-size: 34px;
+    font-weight: bolder;
+    color: #DAA520;
+}
+
+.login_btn{
+    cursor: pointer;
+    background-color: #FCF55F  ;
+    padding: 1%;
+    margin: 4px 2px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid black;
+    width: 30%;
+    align-self: center;
+    border-radius: 15px;
+}
+
+.login_Text{
+    font-size: 16px;
+    padding: 1%;
+    margin: 4px 2px;
+    color: black;
+    font-weight: 800;
+}
+.login_label{
+    width: 70%;
+    text-align: right;
+}
+
+.loginFrm{
+    display: flex;
+    flex-direction: column;
+}
+
+.logged_panel{
+    color: white;
+    font-size: 21px;
+    position: fixed;
+    left: 1154px;
+    text-align: center;
+    border: 1px solid white;
+    width: 10%;
+    padding: 10px 20px;
+}
+
+.change_btn{
+    cursor: pointer;
+    background-color: #FCF55F  ;
+    padding: 1%;
+    margin: 4px 2px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid black;
+    width: 80%;
+    align-self: center;
+    border-radius: 15px;
+}
+
+/* CSS For Login Panel Starts Here */
+
+/* CSS For Footer Starts Here */
+
+.footer{
+    width: 100%;
+    height: 25px;
+    position: fixed;
+    bottom: 0;
+    border: 0.1px solid #818589;
+    background-color:black;
+    text-align: -webkit-center;
+}
+
+.fa-basket-shopping{
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.cart_icon{
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0px;
+}
+.cart_header{
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.subtotal{
+    padding: 5%;
+}
+
+.cart_section{
+    overflow-y: auto;
+    max-height: 154px;
+}
+
+.cart_item{
+    display: grid;
+    grid-template-columns: 15fr 3fr 1fr;
+    padding: 5% 2%;
+    border-bottom: 1px solid lightblue;
+}
+
+.cart_catalog{
+    display: table;
+}
+
+.cs{
+    display: table-row;
+}
+
+.item_title, .item_price, .item_quantity{
+    padding: 20px;
+    display: table-cell;
+    /* border-bottom: 1px solid lightcoral; */
+}
+
+.item_title{
+    font-weight: bold;
+    text-align: left;
+}
+
+.item_price{
+    color: #32CD32;
+    font-weight: 800;
+}
+
+.item_quantity{
+    color: yellow;
+
+}
+
+.remove{
+    color: red;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.remove:hover{
+    color: #EE4B2B;
+}
+
+.subtotalP{
+    border-bottom: 1px solid yellow;
+}
+
+.item_subtotal{
+    padding: 5%;
+    font-weight: bold;
+    color: yellow;
+    /* border: 1px solid yellow; */
+}
+
+.checkout, .view_cart{
+    font-size: large;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    background-color: brown;
+    margin: 10px auto;
+    padding: 10px 15px;
+}
+
+.view_cart{
+    background-color: #fff;
+    border: 2px solid brown;
+    color: brown;
+}
+
+.cart_window{
+    font-size: 26px;
+    position: relative;
+    top: -391px;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    width: 30%;
+    padding: 10px 20px;
+}
+
+/* CSS For Footer Ends Here */
+
+/* CSS For Change Password Starts Here */
+.change_password_section{
+    width: 100%;
+    height: 76vh;
+    font-size: 30px;
+}
+
+.center_content{
+        height: 76vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.main_change_form{
+    color: white;
+}
+
+.forget_form{
+    display: table;
+}
+
+.forgetP{
+    display: table-row;
+}
+
+.forgetL{
+    display: table-cell;
+}
+
+.forget_Text{
+    display: table-cell;
+    font-weight: 1000;
+    font-size: 24px;
+    
+}
+
+.forgetPbtn{
+    justify-content: center ;
+}
+
+.forget_btn{
+    cursor: pointer;
+    background-color: #FCF55F;
+    padding: 1%;
+    margin: 4px 2px;
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid black;
+    width: 225%;
+    align-self: center;
+    border-radius: 80px;
+}
+
+/* CSS For Change Password Ends Here */
+
+/* CSS For Checkout Starts Here */
+.checkout_section{
+    color: white;
+    width: 100%;
+    height: 90vh;
+    font-size: 40px;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#checkout_section{
+    display: table;
+    font-weight: bolder;
+}
+
+.checkout_heading{
+    display: flex;
+}
+
+.checkout_heading_name,.checkout_heading_price,.checkout_heading_quantity{
+    display: inline-flex;
+    margin-left: 37px;
+    padding: 5px;
+}
+
+.checkout_heading_name{
+    color: #A52A2A;
+}
+
+.checkout_heading_price{
+    color:#CC5500;
+}
+
+.checkout_heading_quantity{
+    color:#954535;
+}
+
+.checkoutsect{
+    display: table-row;
+}
+
+.checkout_item_title, .checkout_item_price, .checkout_item_qty{
+    padding: 20px;
+    display: table-cell;
+    /* border-bottom: 1px solid lightcoral; */
+}
+
+.checkout_item_title{
+    color: #CCCCFF;
+    font-weight: bold;
+    text-align: left;
+}
+
+.checkout_item_price{
+    color: #32CD32;
+    font-weight: 800;
+}
+
+.checkout_item_qty{
+    color: yellow;
+
+}
+
+.checkout_subttl{
+    color: #FFDEAD;
+}
+
+.checkout_subtotal{
+    color: #E49B0F;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.checkout_removeBtn{
+    color: red;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-left: 58px
+}
+
+.locations{
+    color: #00A36C;
+    width: 14%;
+    font-size: 22px;
+    background-color: #EADDCa;
+}
+
+.location_label{
+    color: 	#AA336A;
+    font-weight: bold;
+}
+
+.checkout_pay{
+    font-size: 24px;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    background-color: #D27D2D;
+    margin: -40px auto;
+    border-radius: 50px;
+    padding: 10px 15px;
+    color: #1B1212;
+    font-weight: bold;
+}
+
+/* CSS For Checkout Ends Here */
+
+/* CSS For Contact Page Starts Here */
+.main_contact_section{
+    color: white;
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+/* CSS For Contact Page Ends Here */
+
+.hide{
+    display: none;
+}
+
+.not_empty::after{
+    content: var(--cart_size);
+    font-size: 12px;
+    width: 12px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: -8px;
+    right: 6%;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.underline {
+    text-decoration: underline;
+    background-repeat: repeat-x;
+  }
+/*.underline_chalk{
+     background-image: url("https://flyclipart.com/thumb2/chalk-brush-transparent-png-image-613235.png");
+    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/star.svg");
+    background-size: 16px 10px;*/
+    /*background-position: 0 1.06em;
+    background-size: 46px 1px; 
+}*/
+
+/* 
+font awesome stuff
+basket: <i class="fa-solid fa-basket-shopping"></i>
+        <i class="fal fa-shopping-basket"></i>
+cart: <i class="fa-solid fa-cart-shopping"></i>
+cross: <i class="fa-solid fa-xmark"></i>
+<script src="https://kit.fontawesome.com/cb82700b96.js" crossorigin="anonymous"></script> 
+ */

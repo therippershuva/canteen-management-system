@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <!--Required to make website responsive-->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Online Canteen System</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://kit.fontawesome.com/cb82700b96.js" crossorigin="anonymous"></script>
+    <script src='main.js'></script>
+
+    <!-- File Links -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <section class="background">
+        <!--Navigation Bar Starts Here-->
+        <section class="nav_bar">
+            <div class="logo">
+                <img src="Photo/logo.jpg" alt="Canteen Logo" class="image_res"><span class="logo_title">Online Canteen
+                    System</span>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                    <li class="login">
+                        <i class="fa-solid fa-user login"></i>
+                    </li>
+                    <li class="logged"> 
+                        <i class="fa-solid fa-user-check"></i>
+                        <span class="username"></span>
+                    </li>
+                    <li> 
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <!--Navigation Bar Ends Here-->
+        
+        <!-- Login Panel Starts Here -->
+        <section class="loginPanel">
+            <div class="login_Panel hide">
+                <div class="login_header underline">
+                    Login
+                </div>
+                
+                <form class="login_form">
+                    <div class="loginFrm">    
+                    <label for="user_id" class="login_label">ID:
+                        <input type="text" name="user_id" placeholder="ID" class="user_id login_Text"></label>
+                    <label for="password" class="login_label">Password:
+                        <input type="password" name="password" placeholder="Password" class="password login_Text"></label>
+                    </div>          
+                    <input type="submit" name="submit" class="login_btn submit_btn">
+                    <input type="button" name="forgot" class="login_btn forgot_btn" value="Forgot Credentials">
+                </form>
+            </div>
+            <div class="logged_panel hide">
+                <span class="username"></span>
+                <input type="button" name="pswChange" class="change_btn" value="Change Password" onclick="window.location.href='login.html'">
+            </div>
+            </section>
+            <!-- Login Panel Ends Here -->
+
+        <!--Credit Starts Here-->
+        <section class="credit text-right">
+            <p class="creditP"><i class="fa-solid fa-circle-dollar-to-slot"></i></span><span id="credit"></span></p>
+        </section>
+        <!--Credit Ends Here-->
+
+        <!--Large Heading Starts Here-->
+        <section class="lrg_heading">
+            <div class="main_title">
+                Checkout
+            </div>
+        </section>
+        <!--Large Heading Ends Here-->
+
+        <!--Main Section Starts Here-->
+        <section class="main_section checkout_section">
+            
+            <div id="checkout_section">
+                <!-- <div class="checkout_heading">
+                    <div class="checkout_heading_name">Name</div>
+                    <div class="checkout_heading_quantity">Quantity</div>
+                    <div class="checkout_heading_price">Price</div>
+                </div> -->
+            </div>
+            <div class="location">
+                <form class="location_form">
+                <label for="Location" class="location_label underline">Select Room:</label>
+                <input list="locations" name="locations" class="locations">
+                <datalist id="locations">
+                    <option value="601">
+                    <option value="602">
+                    <option value="701">
+                    <option value="702">
+                    <option value="703">
+                    <option value="801">
+                    <option value="802">
+                    <option value="803">
+                    <option value="901">
+                    <option value="902">
+                  </datalist>
+              </form>
+              </div>
+            <div class="subtotal text-right">
+                <p class="subtotalP"><span class='checkout_subttl'>SubTotal:</span><span class="checkout_subtotal"></span></p>
+            </div>
+            <div class="checkout_pay">
+                Pay
+                <!-- <input type="button" name="checkout" class="checkout_btn" value="Checkout" onclick="window.location.href='login.html'"> -->
+            </div>
+        </section>
+        <!--Main Section Ends Here-->
+
+        <!-- Footer Section Starts Here -->
+        <!-- <section class="footer">
+            <div class="cart_icon">
+                <i class="fa-solid fa-basket-shopping not_empty"></i>
+            </div>
+            <div class="cart_window hide">
+                <div class="cart_header text-left">
+                    My Cart</div>
+                <div class="cart_section">
+                    <div class="cart_item">
+                        <div class="cart_details">
+                            <span class="item_title">Title</span>
+                            <span class="item_quantity">Quantity</span>
+                            <span class="item_price">Price</span>
+                        </div>
+                        <div class="remove">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="subtotal text-right">
+                    SubTotal:
+                </div>
+                <div class="checkout">
+                    Checkout
+                </div>
+            </div>
+        </section> -->
+        <!-- Footer Section Ends Here -->
+    </section>
+    
+    <!-- Code For Importing JavaScript File -->
+    <script src="script.js" defer></script>
+    <!-- <script src="change.js"></script> -->
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+</body>
+
+</html>
